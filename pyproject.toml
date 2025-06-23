@@ -1,0 +1,24 @@
+[project]
+name = "django-lom"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Elias Moura",email = "elias.smourayt@gmail.com"}
+]
+readme = "README.md"
+requires-python = "=3.12.10"
+dependencies = [
+    "django (>=5.2.1,<6.0.0)",
+    "pillow (>=11.2.1,<12.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+faker = "^37.3.0"
+pytest = "^8.4.1"
+pytest-django = "^4.11.1"
+
