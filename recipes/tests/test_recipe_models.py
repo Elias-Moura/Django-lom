@@ -18,7 +18,7 @@ class RecipeModelTest(TestCase):
             author=make_author(username='newUsername'),
             title='Recipe Title',
             description='Recipe Description',
-            slug='recipe-slug',
+            slug='recipe-slug-1',
             preparation_time=10,
             preparation_time_unit='Minutos',
             servings=5,
@@ -65,6 +65,6 @@ class RecipeModelTest(TestCase):
         self.assertEqual(
             str(self.recipe),
             self.recipe.title,
-            msg='Recipe string representation must be' 
+            msg='Recipe string representation must be ' 
             f'recipe title "{self.recipe.title=}" but "{str(self.recipe)=}" was recived.'
         )
