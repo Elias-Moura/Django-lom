@@ -4,6 +4,21 @@ from recipes.models import Category, Recipe, User
 def make_category(name='Category'):
     return Category.objects.create(name=name)
 
+
+def make_many_recipes(amout: int):
+    recipes = []
+    
+    for i in range(amout):
+        kwargs = {
+            'title': f'Recipe Title {i}',
+            'slug': f's-{i}',
+            'author_data': {'username': f'u-{i}'}
+        }
+        recipes.append(make_recipe(**kwargs))
+    
+    return recipes
+    
+
 def make_author(
     first_name='user',
     last_name='name',
