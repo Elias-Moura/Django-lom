@@ -1,3 +1,4 @@
+import time
 from django.urls import reverse
 import pytest
 from .base import AuthorsBaseTest
@@ -62,6 +63,8 @@ class AuthorsLoginTest(AuthorsBaseTest):
         # Usuário envia o formulário
         
         form.submit()
+        
+        time.sleep(1)
         
         self.assertIn(
             'Invalid username or password',
