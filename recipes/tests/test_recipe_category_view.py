@@ -8,7 +8,7 @@ from recipes.tests.fixtures import make_recipe
 class RecipeCategoryViewTest(TestCase):
     def test_recipe_category_view_function_is_correct(self):
         view = resolve(reverse('recipes:category', kwargs={'category_id': 1}))
-        self.assertIs(view.func, views.category)
+        self.assertIs(view.func.view_class, views.RecipeListViewCategory)
 
     def test_category_view_returns_200_ok(self):
         make_recipe()
@@ -61,7 +61,7 @@ class RecipeCategoryViewTest(TestCase):
         
         make_recipe(is_published=False)
         
-        response = self.client.get(reverse('recipes:recipe', kwargs={'id': 1}))
+        response = self.client.get(reverse('recipes:recipe', kwargs={'pk': 1}))
         self.assertEqual(
             response.status_code,
             404

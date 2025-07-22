@@ -13,7 +13,7 @@ class RecipeURLsTest(TestCase):
         self.assertEqual(url, '/recipes/category/1/')
         
     def test_recipe_detail_url_is_correct(self):
-        url = reverse('recipes:recipe', kwargs={'id':1})
+        url = reverse('recipes:recipe', kwargs={'pk':1})
         self.assertEqual(url, '/recipes/1/')
         
     def test_recipe_search_url_is_correct(self):
@@ -22,7 +22,7 @@ class RecipeURLsTest(TestCase):
     
     def test_recipe_serach_uses_correct_view_function(self):
         view = resolve(reverse('recipes:search'))
-        self.assertIs(view.func, views.search)
+        self.assertIs(view.func.view_class, views.RecipeListViewSearch)
         
     def test_recipe_search_loads_correct_template(self):
         response = self.client.get(reverse('recipes:search')+ '?q=teste')
