@@ -6,7 +6,7 @@ from authors.models import Profile
 
 User = get_user_model()
 
-@reciver(post_save, sender=User)
+@receiver(post_save, sender=User)
 def create_profile(sender, instance, created, *args, **kwargs):
     if created:
         profile = Profile.objects.create(author=instance)
