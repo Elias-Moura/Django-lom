@@ -49,10 +49,14 @@
 }
 
 html {
+  height: 100%;
   font-size: 62.5%;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-size: 1.6rem;
   font-family: var(--font-primary);
   background: var(--color-gray-1);
@@ -81,6 +85,11 @@ a {
   max-width: 144rem;
   margin: 0 auto;
   padding: var(--spacing-gutter-medium);
+}
+
+
+.main-content-container {
+    flex: 1;
 }
 
 .main-header-container {
