@@ -1,2 +1,3 @@
 from .all import *
-from .dashboard_recipe import DashboardRecipe, DashboardRecipeDelete
+from .dashboard_recipe import *
+from .profile import *
